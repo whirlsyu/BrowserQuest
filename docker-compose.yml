@@ -1,0 +1,12 @@
+version: '2'
+services:
+  bquest:
+    build: .
+    ports:
+     - "8000:8000"
+    environment:
+     - NB_PLAYERS=10
+     - NB_WORLDS=1
+     - REDIS_HOST=redisdb
+  redisdb:
+    image: "redis:4-alpine"
